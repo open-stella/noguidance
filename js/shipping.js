@@ -40,7 +40,7 @@ function checkout() {
             lineItems: stripeFormat,
             mode: 'payment',
             successUrl: 'https://noguidance.xyz/success',
-            cancelUrl: 'https://noguidance.xyz/cancel',
+            cancelUrl: 'https://noguidance.xyz/cart',
             shippingAddressCollection: {
                 allowedCountries: ['US', 'CA', 'GB'],
             }
