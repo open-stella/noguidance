@@ -1,0 +1,140 @@
+.cartItems {
+
+}
+
+.cartItem {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.cartItemImage {
+    min-width: 100px;
+    min-height: 100px;
+    width: 100px;
+    height: 100px;
+    max-height: 100px;
+    background-color: rgba(0,0,0,0.1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.cartItemDetails {
+    width: 100%;
+}
+
+.cartItemDetails h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.cartItemDetails p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.warning {
+    background-color: black;
+    color: white;
+    padding: 10px;
+
+}
+
+.labels {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.labels > div {
+    width: fit-content;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.removeLabel {
+    background-color: rgba(255,0,0,0.3) !important;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+.quantityBar {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+.quantityBar .btn {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    -webkit-appearance: none;
+    border: 0;
+}
+
+.selectOptionsInner button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: black;
+    padding: 12px;
+    color: white;
+    --webkit-appearance: none;
+    border: 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#selectablesContent {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#selectableContent form {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.selectOptions > .selectOptionsInner {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    background-color: white;
+    z-index: 2;
+    overflow-y: auto;
+    max-height: 90vh;
+    animation: slideUp 0.3s ease-out;
+}
+
+.conclusion {
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    border-top: solid 1px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.checkoutButton {
+    background-color: rgba(0,0,0,1);
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkoutButton > p {
+    margin: 0;
+}

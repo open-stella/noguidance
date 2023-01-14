@@ -1,0 +1,19 @@
+{
+    "name": "Cargos",
+    "styleName": "Vanilla",
+    "price": 50.00,
+    "preorder": true,
+    "images": [
+        "/images/image00001.jpeg",
+        "/images/image00004.jpeg",
+        "/images/image00014.jpeg",
+        "/images/image00016.jpeg",
+        "/images/image00010.jpeg"
+    ],
+    "modelImage": "/images/image00004.jpeg",
+    "modelSize": "5'11",
+    "modelWearing": "Large",
+    "options": [
+     { "Small": "price_1MPyFmHoteyJlbKjcV1ilG9r", "Medium": "price_1MPta4HoteyJlbKjDaKzuVou", "Large": "price_1MPyGuHoteyJlbKjARoEipR9" }   
+    ]
+}

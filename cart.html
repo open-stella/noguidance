@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - No Guidance</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+    <div class="header">
+        <div></div>
+        <a href="/"><img src="/images/noguidance.svg" alt=""></a>
+        <div></div>
+    </div>
+
+    <div class="content">
+        <div class="textArt">
+            <h1>Cart</h1>
+        </div>
+
+        <div class="warning hidden">
+            <h3>Preorder Items</h3>
+            <p>Some of the items in your cart are currently for preorder at the moment. They'll be reserved for you and shipped out when ready. </p>
+        </div>
+
+        <div class="cartItems">
+
+        </div>
+
+        <div class="conclusion">
+            <p><b>Total: </b><a class="totalPrice">Calculating...</a></p>
+            <p><b>Shipping: </b>Decide now</p>
+            <div class="checkoutButton" onclick="shipping()">
+                <p><b>ADD SHIPPING</b></p>
+                <p style="opacity: 0.7"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footerInner">
+            <a href="/privacy">Privacy</a>
+            <a href="/tos">Terms of Service</a>
+        </div>
+    </div>
+
+
+    <div class="slidable">
+        <div class="selectOptions hidden" id="selectOptions">
+            <div onclick="dismiss('selectOptions')" class="background"></div>
+        
+            <div class="selectOptionsInner">
+                <div class="headerSelect">
+                    <div></div>
+                    <div>Select Options</div>
+                    <div></div>
+                </div>
+                <div class="content" id="selectablesContent">
+                    <h1>Shipping</h1>
+                    <p>Choose your shipping type below.</p>
+                    <input type="radio" id="second_class" name="shipping" value="sc">
+                    <label for="second_class">Standard UK (FREE)</label><br>
+                    <input type="radio" id="first_class" name="shipping" value="fc">
+                    <label for="first_class">Next day (£3.80)</label><br>
+    
+    
+                    <p>The delivery options above are priced based on how long they'll take to arrive.</p>
+                    <ul>
+                        <li>Standard (3-5 days)</li>
+                        <li>Next day (1-2 days)</li>
+                    </ul>
+                    <p>When you click "Checkout", you will be transferred to our payment processor, Stripe. They
+                        will handle your payment and collect your shipping address. Please verify your items
+                        when
+                        you reach the Stripe platform to avoid incorrect orders.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>
