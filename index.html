@@ -11,7 +11,10 @@
 <body>
     <div class="header">
         <div></div>
-        <img src="/images/noguidance.svg" alt="">
+        <div class="headerMid">
+            <img src="/images/noguidance.svg" alt="">
+            <p>No Guidance</p>
+        </div>
         <div></div>
     </div>
 
@@ -24,8 +27,8 @@
                 <p>While we work on our new site, the one you're currently using is a temporary version that supports basic e-commerce.</p>
             </div>
             <div style="margin-top: 30px;" class="alertBlock">
-                <h2>Limited Discount</h2>
-                <p>Use code NOGUIDANCE5 at checkout to get £5 off shipping.</p>
+                <h2 id="promoTitle">Limited Discount</h2>
+                <p id="promoDesc">Use code NOGUIDANCE5 at checkout to get £5 off shipping.</p>
             </div>
         </div>
 
@@ -62,6 +65,7 @@
         </div>
     </div>
 
+    <script src="/js/global.js"></script>
     <script src="/js/index.js"></script>
 </body>
 </html>

@@ -133,12 +133,20 @@ function dismiss(item) {
 }
 
 function shipping() {
+    var fail = false;
+
     if (cart == null) {
+        fail = true;
         alert("Please add an item to your cart before proceeding to checkout.");
+        window.location.href = "/"
     }
     if (cart.length == 0) {
+        fail = true;
         alert("Please add an item to your cart before proceeding to checkout.");
+        window.location.href = "/"
     }
 
-    window.location.href = "shipping"
+    if (!fail) {
+        window.location.href = "shipping"
+    }
 }
