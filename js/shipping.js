@@ -124,45 +124,47 @@ async function checkout() {
                 }
             }
 
-            if (await checkDiscount()) {
-                stripeFormat.pop();
-
-                if (zoneList[ticked.value] == "euz1") {
-                    stripeFormat.push({
-                        price: shipping.eu,
-                        quantity: 1
-                    })
+            if (document.getElementById("discountInput").value.trim() != "") {
+                if (await checkDiscount()) {
+                    stripeFormat.pop();
+    
+                    if (zoneList[ticked.value] == "euz1") {
+                        stripeFormat.push({
+                            price: shipping.eu,
+                            quantity: 1
+                        })
+                    }
+                    if (zoneList[ticked.value] == "euz2") {
+                        stripeFormat.push({
+                            price: shipping.eu,
+                            quantity: 1
+                        })
+                    }
+    
+                    if (zoneList[ticked.value] == "euz3") {
+                        stripeFormat.push({
+                            price: shipping.eu,
+                            quantity: 1
+                        })
+                    }
+    
+                    if (zoneList[ticked.value] == "wz1") {
+                        stripeFormat.push({
+                            price: shipping.wz,
+                            quantity: 1
+                        })
+                    }
+    
+                    if (zoneList[ticked.value] == "sz1") {
+                        stripeFormat.push({
+                            price: shipping.standardUK,
+                            quantity: 1
+                        })
+                    }
+                    alert("Your discount has been applied successfully.")
+                } else {
+                    alert("Your discount code is invalid.")
                 }
-                if (zoneList[ticked.value] == "euz2") {
-                    stripeFormat.push({
-                        price: shipping.eu,
-                        quantity: 1
-                    })
-                }
-
-                if (zoneList[ticked.value] == "euz3") {
-                    stripeFormat.push({
-                        price: shipping.eu,
-                        quantity: 1
-                    })
-                }
-
-                if (zoneList[ticked.value] == "wz1") {
-                    stripeFormat.push({
-                        price: shipping.wz,
-                        quantity: 1
-                    })
-                }
-
-                if (zoneList[ticked.value] == "sz1") {
-                    stripeFormat.push({
-                        price: shipping.standardUK,
-                        quantity: 1
-                    })
-                }
-                alert("Your discount has been applied successfully.")
-            } else {
-                alert("Your discount code is invalid.")
             }
 
 
