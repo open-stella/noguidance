@@ -78,6 +78,7 @@ async function checkout() {
 
         console.log(ticked.value);
         if (Object.keys(zoneList).includes(ticked.value)) {
+            dynamicDescriptor();
             if (zoneList[ticked.value] == "euz1") {
                 stripeFormat.push({
                     price: shipping.eu,
@@ -216,7 +217,7 @@ async function checkDiscount() {
         eu: 20,
         wz: 30
     }
-    
+
     const discountBox = document.getElementById("discountInput"); 
 
     if (discountBox.value.trim() != "") {
@@ -241,9 +242,14 @@ async function checkDiscount() {
             return false;
         }
     }
+    dynamicDescriptor();
 }
 
 document.getElementById("shippingInput").addEventListener("keyup", checkDiscount);
+setInterval(() => {
+    dynamicDescriptor()
+}, 100);
+
 document.getElementById("discountInput").addEventListener("keyup", checkDiscount);
 setTimeout(checkDiscount, 3000)
 
