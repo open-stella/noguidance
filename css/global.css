@@ -147,6 +147,8 @@ body {
     padding: 10px;
     display: flex;
     width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
     border-top: solid 1px rgba(0,0,0,0.1);
     justify-content: center;
     gap: 25px;

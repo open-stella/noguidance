@@ -1,10 +1,32 @@
 var stripe = Stripe('pk_live_51MPsEIHoteyJlbKjvNlC9iMqnsFs8vmgwVqn6rkmGa88q18ydmzOpHL2EXDHJZgDMZkLuwgqOxodPS0PKaEtHKMk00SqZbPf0t')
 
-const shipping = {
-    standardUK: 'price_1MQFH0HoteyJlbKjljgEhN5m'
+const zones = [
+    'euz1',
+    'euz2',
+    'euz3',
+    'wz1',
+    'wz2',
+    'wz3',
+]
+
+zones.forEach((zone) => {
+    fetchShipping(zone);
+})
+
+function fetchShipping(zone) {
+    fetch(`/components/${zone}`).then((res) => res.text().then((data) => {
+        console.log(data);
+        data.split("\n").forEach((item) => {
+            const itemElm = document.createElement('li');
+            itemElm.innerText = item;
+            document.getElementById(zone).appendChild(itemElm)
+        });
+    }))
 }
 
-
+const shipping = {
+    standardUK: 'price_1MQH9PHoteyJlbKjIfsinNLN'
+}
 
 function checkout() {
     const ticked = document.querySelector(`input[name="shipping"]:checked`);
@@ -26,8 +48,8 @@ function checkout() {
             })
         })
 
-        var shipping = "";
-        if (tickValue == "standardUK") {
+        var shippingstat = "";
+        if (tickValue == "sc") {
             stripeFormat.push({
                 price: shipping.standardUK,
                 quantity: 1

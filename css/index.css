@@ -31,12 +31,14 @@
     justify-content: start;
     overflow: auto;
     gap: 15px;
-    scroll-snap-type: x mandatory;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+    /* scroll-snap-type: x mandatory; */
 }
 
 .item-image-carousel > img {
     width: calc(100vw - calc(var(--content-padding) * 2));
-    min-width: 100%;
+    /* min-width: 100%; */
     /* padding-left: var(--content-padding);
     padding-right: var(--content-padding); */
     box-sizing: border-box;
@@ -47,13 +49,12 @@
 
 @media screen and (min-width: 600px) {
     .item-image-carousel {
-        padding-left: var(--content-padding);
-        padding-right: var(--content-padding);
+        scroll-snap-type: none;
     }
     .item-image-carousel > img {
         width: 150px;
         max-width: 150px;
-        min-width: 0;
+        min-width: 150px;
         min-height: 150px;
         height: 150px;
     }

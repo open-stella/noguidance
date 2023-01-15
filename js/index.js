@@ -4,9 +4,6 @@ document.getElementsByClassName("checkoutButton")[0].addEventListener('click', (
 
 fetch("/directory/cargosCream.json")
 .then((res) => res.json().then((data) => {
-    const titleContainer = document.createElement('a');
-    titleContainer.href = "#"
-
     const title = document.createElement('h2');
     title.innerText = data.name;
     title.setAttribute("onclick", `selectOptions("/directory/cargosCream.json")`);
@@ -23,9 +20,7 @@ fetch("/directory/cargosCream.json")
     const content = document.createElement('div');
     content.className = "content";
 
-    titleContainer.appendChild(title);
-
-    content.appendChild(titleContainer);
+    content.appendChild(title);
     content.appendChild(price);
 
     const imageCarousel = document.createElement('div');

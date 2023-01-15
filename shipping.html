@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Guidance</title>
+    <title>Shipping - No Guidance</title>
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/cart.css">
 </head>
@@ -22,6 +22,11 @@
 
         <input type="radio" id="second_class" name="shipping" value="sc">
         <label for="second_class">Standard UK (FREE)</label><br>
+        <input type="radio" id="euz" name="shipping" value="euz">
+        <label for="euz"><a href="#europe-zone-guides">Europe Zone 1-3</a> Shipping (£15)</label><br>
+        <input type="radio" id="wz" name="shipping" value="wz">
+        <label for="wz"><a href="#world-zone-guides">World Zone 1-3</a> Shipping (£25)</label><br>
+        <p>Please refer to the information below on which countries are participating in our Europe Zones.</p>
         <!-- <input type="radio" id="first_class" name="shipping" value="fc">
         <label for="first_class">International (£3.80)</label><br> -->
 
@@ -40,6 +45,31 @@
             <p><b>CHECKOUT</b></p>
             <p style="opacity: 0.7"><a></a></p>
         </div>
+
+        <hr>
+        <h2 id="europe-zone-guides">Europe Zone Guide</h2>
+        <p>The following countries are in No Guidance's Europe Zones 1-3, please make sure you've selected your method of shipping accordingly.</p>
+        <h3>Europe Zone 1</h3>
+        <ul id="euz1"></ul>
+
+        <h3>Europe Zone 2</h3>
+        <ul id="euz2"></ul>
+
+        <h3>Europe Zone 3</h3>
+        <ul id="euz3"></ul>
+
+        <hr>
+        <h2 id="world-zone-guides">World Zone Guide</h2>
+        <p>The following countries are in No Guidance's World Zones 1-3, please make sure you've selected your method of shipping accordingly.</p>
+
+        <h3>World Zone 1</h3>
+        <ul id="wz1"></ul>
+
+        <h3>World Zone 2</h3>
+        <ul id="wz2"></ul>
+
+        <h3>World Zone 3</h3>
+        <ul id="wz3"></ul>
     </div>
 
     <div class="footer">
