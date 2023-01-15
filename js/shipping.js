@@ -20,7 +20,8 @@ async function main() {
     for (item of zoneAlhabetical) {
         const option = document.createElement('option');
         option.value = item;
-        document.getElementById("countries").appendChild(option);
+        option.innerText = item;
+        document.getElementById("shippingInput").appendChild(option);
     }
 }
 main();
@@ -245,7 +246,7 @@ async function checkDiscount() {
     dynamicDescriptor();
 }
 
-document.getElementById("shippingInput").addEventListener("keyup", checkDiscount);
+document.getElementById("shippingInput").addEventListener("change", checkDiscount);
 setInterval(() => {
     dynamicDescriptor()
 }, 100);

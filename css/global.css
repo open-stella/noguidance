@@ -167,11 +167,12 @@ body {
     color: rgba(0,0,0,0.7);
 }
 
-input[type="text"] {
+input[type="text"], select {
     width: 100%;
     padding: 15px;
     border: solid 2px black;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .header .headerMid {
