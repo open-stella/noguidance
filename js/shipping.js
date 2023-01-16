@@ -256,5 +256,6 @@ document.getElementById("shippingInput").addEventListener("change", checkDiscoun
 // }, 100);
 
 document.getElementById("discountInput").addEventListener("keyup", checkDiscount);
+document.getElementById("discountInput").addEventListener("change", checkDiscount);
 setTimeout(checkDiscount, 3000)
 
