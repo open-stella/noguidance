@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unavailable - No Guidance</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="header">
+        <div></div>
+        <a href="/" class="headerMid">
+            <img src="/images/noguidance.svg" alt="">
+            <p>Unavailable - No Guidance</p>
+        </a>
+        <div></div>
+    </div>
+
+    <div class="content">
+        <div class="textArt">
+            <h1>Working on it</h1>
+        </div>
+
+        <p>Sorry, some changes are being made to the No Guidance website.</p>
+        <p>We'll be up soon enough.</p>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script>
+        var stripe = Stripe('pk_test_51MPsEIHoteyJlbKjSidxsiOxDp16CMNIv5ZA6TlcRuKkRDHwcNWNmsRoHZ9anpkPQJXHHw7h8n07vV5wuFuFpxvm00sd8WtXdg')
+        
+        const countryListAlpha2 = ["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MK", "ML", "MM", "MN", "MO", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SZ", "TA", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VN", "VU", "WF", "WS", "XK", "YE", "YT", "ZA", "ZM", "ZW", "ZZ"]
+        
+        function payment() {
+            var stripeFormat = [
+                {
+                    price: 'price_1MQxDQHoteyJlbKj97LWks95',
+                    quantity: 1
+                }
+            ]
+    
+            var stripeOptions = {
+                lineItems: stripeFormat,
+                mode: 'payment',
+                successUrl: 'https://noguidance.xyz/success',
+                cancelUrl: 'https://noguidance.xyz/cart',
+                shippingAddressCollection: {
+                    allowedCountries: countryListAlpha2,
+                }
+            }
+    
+            stripe.redirectToCheckout(stripeOptions)
+        }
+    </script>
+    <div class="footer">
+        <div class="footerInner">
+            <a href="/privacy">Privacy</a>
+            <a href="/tos">Terms of Service</a>
+            <a href="https://www.instagram.com/noguidance.xyz/">Instagram</a>
+            <a href="https://www.tiktok.com/@noguidance.xyz">TikTok</a>
+        </div>
+    </div>
+
+    <script src="/js/global.js"></script>
+</body>
+</html>

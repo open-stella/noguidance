@@ -4,30 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unavailable - No Guidance</title>
+    <title>No Guidance</title>
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <div class="header">
         <div></div>
-        <a href="/" class="headerMid">
+        <div class="headerMid">
             <img src="/images/noguidance.svg" alt="">
-            <p>Unavailable - No Guidance</p>
-        </a>
+            <p>No Guidance</p>
+        </div>
         <div></div>
     </div>
 
     <div class="content">
         <div class="textArt">
-            <h1>Working on it</h1>
+            <h1>Change the Game.</h1>
+    
+            <div style="margin-top: 30px; display: none;" class="alertBlock">
+                <h2>Temporary site</h2>
+                <p>While we work on our new site, the one you're currently using is a temporary version that supports basic e-commerce.</p>
+            </div>
+            <div style="margin-top: 30px;" class="alertBlock">
+                <h2 id="promoTitle">Limited Discount</h2>
+                <p id="promoDesc">Use code NOGUIDANCE5 at checkout to get £5 off international shipping.<br>*UK orders are eligible for free delivery using the discount code.</p>
+            </div>
         </div>
 
-        <p>Sorry, some changes are being made to the No Guidance website.</p>
-        <p>We'll be up soon enough.</p>
+        <p>Tap on an item to add it to the cart</p>
+
+    </div>
+
+    <div class="minishop">
+        
     </div>
 
     <div class="footer">
+        <div class="purchaseAndCheckout">
+            <div class="checkoutButton">
+                <p><b>PREORDER</b></p>
+                <p style="opacity: 0.7">From £50.00</p>
+            </div>
+        </div>
+
         <div class="footerInner">
             <a href="/privacy">Privacy</a>
             <a href="/tos">Terms of Service</a>
@@ -36,6 +56,16 @@
         </div>
     </div>
 
+    <div class="slidables">
+        <div class="slideableLoading hidden">
+            <div class="middleSlideableLoading">
+                <img src="/images/loader.png" class="loading" />
+                <div id="slideableStatus">Connecting...</div>
+            </div>
+        </div>
+    </div>
+
     <script src="/js/global.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
