@@ -196,7 +196,7 @@ function dynamicDescriptor() {
         document.getElementById("promoDesc").innerText = "Use code NOGUIDANCE5 at checkout to get £5 off shipping."
 
         if (zoneList[country] == "euz1") {
-            descripter.innerText = `Shipping £${shippingPrices.eu}}`;
+            descripter.innerText = `Shipping £${shippingPrices.eu}`;
         }
         if (zoneList[country] == "euz2") {
             descripter.innerText = `Shipping £${shippingPrices.eu}`;
