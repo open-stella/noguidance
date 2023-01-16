@@ -251,9 +251,9 @@ async function checkDiscount() {
 }
 
 document.getElementById("shippingInput").addEventListener("change", checkDiscount);
-setInterval(() => {
-    dynamicDescriptor()
-}, 100);
+// setInterval(() => {
+//     dynamicDescriptor()
+// }, 100);
 
 document.getElementById("discountInput").addEventListener("keyup", checkDiscount);
 setTimeout(checkDiscount, 3000)
