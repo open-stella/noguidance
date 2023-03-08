@@ -47,6 +47,11 @@
     border-radius: 10px;
 }
 
+.item {
+    margin-bottom: 60px;
+    margin-top: 5px;
+}
+
 @media screen and (min-width: 600px) {
     .item-image-carousel {
         scroll-snap-type: none;

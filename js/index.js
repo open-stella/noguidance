@@ -1,45 +1,78 @@
-document.getElementsByClassName("checkoutButton")[0].addEventListener('click', () => {
-    selectOptions("/directory/cargosCream.json");
-});
+(() => {
+    addItem("/directory/cargosBlack.json")
+    addItem("/directory/cargosCream.json")
+})()
 
-fetch("/directory/cargosCream.json")
-.then((res) => res.json().then((data) => {
-    const title = document.createElement('h2');
-    title.innerText = data.name;
-    title.setAttribute("onclick", `selectOptions("/directory/cargosCream.json")`);
-
-    const price = document.createElement('p');
-    var priceText = `£${data.price.toFixed(2)}`;
+function addItem(itemUrl) {
+    fetch(itemUrl)
+    .then((res) => res.json().then((data) => {
+        const title = document.createElement('h2');
+        title.innerText = `${data.styleName} ${data.name}`;
+        title.setAttribute("onclick", `selectOptions("${itemUrl}")`);
     
-    if (data.preorder === true) {
-        priceText = `Preorder from ${priceText}`;
-    }
+        const price = document.createElement('p');
+        var priceText = `£${data.price.toFixed(2)}`;
+        
+        if (data.preorder === true) {
+            priceText = `Preorder from ${priceText}`;
+        }
+    
+        price.innerText = priceText;
+    
+        const content = document.createElement('div');
+        content.className = "content";
+    
+        content.appendChild(title);
+        content.appendChild(price);
+    
 
-    price.innerText = priceText;
+        // <div class="checkoutButton">
+        //     <p><b>PREORDER</b></p>
+        //     <p style="opacity: 0.7">From £50.00</p>
+        // </div>
 
-    const content = document.createElement('div');
-    content.className = "content";
+        const checkoutBtn = document.createElement("div");
+        checkoutBtn.classList.add("checkoutButton");
 
-    content.appendChild(title);
-    content.appendChild(price);
+        const checktoutBtnLabel = document.createElement("p")
+        const checktoutBtnLabelB = document.createElement("b")
+        checktoutBtnLabelB.innerText = (data.preorder ? "PREORDER" : "BUY");
 
-    const imageCarousel = document.createElement('div');
-    imageCarousel.className = "item-image-carousel";
+        const checkoutRsBtn = document.createElement("p");
+        checkoutRsBtn.style.opacity = 0.7;
+        checkoutRsBtn.innerText = `From £${data.price}`
 
-    data.images.forEach((item) => {
-        const image = document.createElement('img');
-        image.src = item;
-        imageCarousel.appendChild(image)
-    })
+        checktoutBtnLabel.appendChild(checktoutBtnLabelB);
 
-    const item = document.createElement('div');
-    item.className = "item";
+        checkoutBtn.appendChild(checktoutBtnLabel)
+        checkoutBtn.appendChild(checkoutRsBtn);
 
-    item.appendChild(imageCarousel)
-    item.appendChild(content)
+        checkoutBtn.addEventListener("click", (() => {
+            selectOptions(itemUrl)
+        }))
 
-    document.getElementsByClassName('minishop')[0].appendChild(item)
-}))
+        content.appendChild(checkoutBtn)
+
+        
+
+        const imageCarousel = document.createElement('div');
+        imageCarousel.className = "item-image-carousel";
+    
+        data.images.forEach((item) => {
+            const image = document.createElement('img');
+            image.src = item;
+            imageCarousel.appendChild(image)
+        })
+    
+        const item = document.createElement('div');
+        item.className = "item";
+    
+        item.appendChild(imageCarousel)
+        item.appendChild(content)
+    
+        document.getElementsByClassName('minishop')[0].appendChild(item)
+    }))
+}
 
 function selectOptions(item) {
     document.getElementsByClassName("slideableLoading")[0].classList.remove("hidden");

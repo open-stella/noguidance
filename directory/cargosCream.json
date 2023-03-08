@@ -2,7 +2,7 @@
     "name": "Cargos",
     "styleName": "Vanilla",
     "price": 50.00,
-    "preorder": true,
+    "preorder": false,
     "images": [
         "/images/image00001.jpeg",
         "/images/image00004.jpeg",
