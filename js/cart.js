@@ -117,7 +117,53 @@ if (cart != null) {
                     document.getElementsByClassName('cartItems')[0].appendChild(itemContainer);
                 }) 
             } else {
-                alert(`Unfortunately, there was an error processing ${item.name} in cart.`)
+                alert(`Sorry, an item you have added to cart is no longer available. Please remove it from your cart.`)
+
+                const itemContainer = document.createElement('div');
+                    itemContainer.className = "cartItem";
+
+                    const itemImage = document.createElement('img');
+                    
+                    itemImage.className = "cartItemImage";
+
+                    const detailDiv = document.createElement('div');
+                    detailDiv.className = "cartItemDetails";
+
+                    const itemTitle = document.createElement('h3');
+                    itemTitle.innerText = `Unavailable Item`;
+
+                    const itemPrice = document.createElement('p');
+                    itemPrice.innerText = `This item is no longer available. Please remove this from your cart.`;
+                    document.getElementsByClassName("totalPrice")[0].innerText = `Unavailable Item`;
+
+
+                    const labels = document.createElement('div');
+                    labels.className = "labels";
+
+                    
+                    detailDiv.appendChild(itemTitle);
+                    detailDiv.appendChild(itemTitle);
+                    detailDiv.appendChild(itemPrice);
+                    detailDiv.appendChild(labels);
+
+
+                    const removeLabel = document.createElement('div');
+                    removeLabel.className = "removeLabel";
+                    removeLabel.innerText = "Remove";
+                    removeLabel.addEventListener('click', (e) => {
+                        cart.splice(index, 1);
+                        ls.setItem("cart", JSON.stringify(cart));
+                        location.reload();
+                    });
+
+                    labels.appendChild(removeLabel);
+
+                    itemContainer.appendChild(itemImage);
+                    itemContainer.appendChild(detailDiv);
+
+
+
+                    document.getElementsByClassName('cartItems')[0].appendChild(itemContainer);
             }
         })
     })
