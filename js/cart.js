@@ -4,6 +4,8 @@ var cart = ls.getItem("cart");
 
 var price = 0;
 
+var valid = true;
+
 if (cart != null) {
     cart = JSON.parse(cart);
     cart.forEach((item, index) => {
@@ -161,7 +163,7 @@ if (cart != null) {
                     itemContainer.appendChild(itemImage);
                     itemContainer.appendChild(detailDiv);
 
-
+                    valid = false;
 
                     document.getElementsByClassName('cartItems')[0].appendChild(itemContainer);
             }
@@ -181,6 +183,11 @@ function dismiss(item) {
 function shipping() {
     var fail = false;
 
+    if (valid == false) {
+        fail = true;
+        alert("There is an item that cannot be processed via checkout. Please remove it from your cart.");
+        window.location.reload();
+    }
     if (cart == null) {
         fail = true;
         alert("Please add an item to your cart before proceeding to checkout.");
